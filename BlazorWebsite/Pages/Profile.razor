@@ -1,0 +1,25 @@
+﻿@page "/Profile"
+<h3>Profile</h3>
+
+<h3>Welcome: @fullname</h3>
+
+First Name:
+<input type="text" id="firstname" @bind=@firstname/> <br />
+Middle Name:
+<input type="text" id="middlename" @bind=@middlename/><br />
+Last Name:
+<input type="text" id="lastname" @bind=@lastname/><br />
+<button class= "btn btn-primary" @onclick = "@GetFullName">Submit</button>
+
+
+@code {
+	private string? firstname { get; set; } = "";
+	private string? middlename { get; set; } = "";
+	private string? lastname { get; set; } = "";
+	private string? fullname = "";
+
+	private void GetFullName()
+	{
+		fullname = firstname+ " " + middlename + " " + lastname;
+	}
+}

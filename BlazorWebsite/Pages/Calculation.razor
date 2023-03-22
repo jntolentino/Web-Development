@@ -1,0 +1,28 @@
+﻿@page "/Calculation"
+<h3>Calculation</h3>
+<h3>Welcome to da Calculator</h3>
+
+1st Number: 
+<input type="number" id="num_1" @bind=@num_1/>
+2nd Number: 
+<input type="number" id="num_2" @bind=@num_2 />
+<br />
+3rd Number: 
+<input type="number" id="num_3" @bind=@num_3 />
+<br />
+<button class="btn btn-primary" @onclick="@GetnumTotal">Submit</button>
+
+<h3>The Number is: @numTotal</h3>
+
+
+@code {
+	private int? num_1 { get; set; } = 0;
+	private int? num_2 { get; set; } = 0;
+	private int? num_3 { get; set; } = 0;
+	private int? numTotal = 0;
+
+	private void GetnumTotal()
+	{
+		numTotal = num_1 + num_2 + num_3;
+	}
+}
